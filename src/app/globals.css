@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -6,6 +7,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-inter: var(--font-inter);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -23,178 +33,86 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
+
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
+  --radius-radius: var(--radius);
+  /* --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --container-custom: 1140px;
+  --radius-xl: calc(var(--radius) + 4px); */
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --accent: #8345d8;
+  /* --accent-foreground: #000000; */
+  --primary: #ede4fc;
+  --primary-foreground: #000000;
+  --shadow: 0px 16px 40px 0px #00000008;
+  --secondary: #f2f4f7;
+  --secondary-foreground: #282828;
+  --muted-foreground: #5f6980;
+  --background: #ffffff;
+  --foreground: #282828;
+  --radius: 50px;
 }
-
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
-
-
-
-/* .dark {
   --muted-foreground: #ffffff;
   --foreground: #ffffff;
   --background: #000000;
   --shadow: 0px 16px 40px 0px #ffffff08;
-} */
+}
 
+body {
+  @apply font-inter;
+}
 
-
-@layer utilities{
-  .container{
-    @apply max-w-[1280px] mx-auto px-4;
+@layer base {
+  /* * {
+    @apply border-border outline-ring/50;
+  } */
+  body {
+    @apply box-border bg-background font-inter text-foreground;
   }
 }
 
 @layer components {
-
-   /* Testimonial Area */
- 
-  .testimonial-section{
-    @apply  text-center;
-  }
-  .testimonial-type{
-    @apply border border-black inline-block mt-[20px] py-[4px] px-[14px] rounded-[100px]  font-inter font-semibold text-[14px] leading-[22px] text-[#282828]; 
-  }
-
-  .testimonial-heading{
-    @apply text-center my-[8px];
-  }
-
-  .testimonial-heading-details{
-    @apply  text-[30px] font-inter font-semibold md:text-[42px] leading-[54px] text-[#282828];
-  }
-
-  .testimonial-users{
-    @apply mt-[56px];
-  }
-  .testimonial-user-details {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px];
 }
-
-  .testimonial-user-background{
-    @apply bg-[#FFFFFF] w-[90%]  h-auto  md:w-[405px] md:h-[278px] shadow-sm;
-  }
-.user-about-section{
-  @apply pt-[40px] px-[40px] flex items-center gap-[16px] ;
-}
-  .user-img{
-    @apply rounded-[100px] ;
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 md:px-4 max-w-full md:max-w-[764px] lg:max-w-[1280px];
   }
 
-  .user-details-heading-three{
-    @apply text-[16px] font-semibold font-inter leading-[26px] text-[#282828] ;
+  h1 {
+    @apply font-medium text-[36px] text-primary-foreground md:text-[48px] lg:text-[64px] leading-[44px] md:leading-[60px] lg:leading-[70.4px] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-3.84px];
   }
 
-  .icons{
-    @apply flex items-center gap-[2px];
+  h2 {
+    @apply font-medium text-[28px] text-foreground md:text-[36px] lg:text-[42px] leading-[36px] md:leading-[42px] lg:leading-[48px] tracking-[-1.2px] md:tracking-[-1.8px] lg:tracking-[-2.4px];
   }
 
-   .user-about{
-    @apply px-[40px];
-  }
-  .user-name{
-    @apply font-inter font-semibold text-[14px] leading-[22px] text-[#282828] pt-[16px];
+  h3 {
+    @apply font-semibold text-[20px] text-foreground md:text-[24px] lg:text-[28px] leading-[32px] md:leading-[36px] lg:leading-[40px] tracking-[-0.6px] md:tracking-[-0.8px] lg:tracking-[-1px];
   }
 
-  .user-paragraph{
-    @apply text-[16px] leading-[26px] text-[#5F6980] font-inter font-normal pt-[14px] pb-[43px];
+  h4 {
+    @apply font-semibold text-[#111111] text-[16px] md:text-[17px] lg:text-[18px] dark:text-white leading-[28px] md:leading-[29px] lg:leading-[30px];
+    /* template heading */
   }
- 
-/* Faq Area */
 
-.faq-area{
-  @apply mt-[80px] text-center bg-white;
-}
+  h5 {
+    @apply font-semibold text-[14px] text-foreground md:text-[15px] lg:text-[16px] leading-[24px] md:leading-[25px] lg:leading-[26px];
+    /* $24 in templates */
+  }
 
-.faq-title{
-  @apply font-inter text-[42px] font-semibold leading-[54px] text-[#282828] mb-[48px]; 
-}
-.faq-content{
-  @apply space-y-[48px];
-}
+  p {
+    @apply font-semibold text-[#0000008F] text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[27px] tracking-[-.4px] md:tracking-[-.6px] lg:tracking-[-.72px]
+    /* hero paragraph text */;
+  }
 
+  .featured-title {
+    @apply mb-8 font-bold text-3xl sm:text-4xl md:text-5xl tracking-tighter;
+  }
 }
