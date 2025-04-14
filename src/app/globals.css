@@ -5,8 +5,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -112,21 +111,90 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+
+
+
+/* .dark {
+  --muted-foreground: #ffffff;
+  --foreground: #ffffff;
+  --background: #000000;
+  --shadow: 0px 16px 40px 0px #ffffff08;
+} */
+
+
+
+@layer utilities{
+  .container{
+    @apply max-w-[1280px] mx-auto px-4;
   }
 }
 
 @layer components {
-  .heading-style {
-    @apply text-3xl font-bold dark:text-red-600 tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none;
+
+   /* Testimonial Area */
+ 
+  .testimonial-section{
+    @apply  text-center;
+  }
+  .testimonial-type{
+    @apply border border-black inline-block mt-[20px] py-[4px] px-[14px] rounded-[100px]  font-inter font-semibold text-[14px] leading-[22px] text-[#282828]; 
   }
 
-  .featured-title {
-    @apply text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8;
+  .testimonial-heading{
+    @apply text-center my-[8px];
   }
+
+  .testimonial-heading-details{
+    @apply  text-[30px] font-inter font-semibold md:text-[42px] leading-[54px] text-[#282828];
+  }
+
+  .testimonial-users{
+    @apply mt-[56px];
+  }
+  .testimonial-user-details {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px];
+}
+
+  .testimonial-user-background{
+    @apply bg-[#FFFFFF] w-[90%]  h-auto  md:w-[405px] md:h-[278px] shadow-sm;
+  }
+.user-about-section{
+  @apply pt-[40px] px-[40px] flex items-center gap-[16px] ;
+}
+  .user-img{
+    @apply rounded-[100px] ;
+  }
+
+  .user-details-heading-three{
+    @apply text-[16px] font-semibold font-inter leading-[26px] text-[#282828] ;
+  }
+
+  .icons{
+    @apply flex items-center gap-[2px];
+  }
+
+   .user-about{
+    @apply px-[40px];
+  }
+  .user-name{
+    @apply font-inter font-semibold text-[14px] leading-[22px] text-[#282828] pt-[16px];
+  }
+
+  .user-paragraph{
+    @apply text-[16px] leading-[26px] text-[#5F6980] font-inter font-normal pt-[14px] pb-[43px];
+  }
+ 
+/* Faq Area */
+
+.faq-area{
+  @apply mt-[80px] text-center bg-white;
+}
+
+.faq-title{
+  @apply font-inter text-[42px] font-semibold leading-[54px] text-[#282828] mb-[48px]; 
+}
+.faq-content{
+  @apply space-y-[48px];
+}
+
 }
