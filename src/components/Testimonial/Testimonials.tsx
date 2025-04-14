@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const page = () => {
+const Testimonials = () => {
   return (
     <div className="container">
       <div className="testimonial-section">
@@ -514,4 +514,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Testimonials
