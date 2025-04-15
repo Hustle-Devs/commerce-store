@@ -4,7 +4,7 @@ const Testimonial = () => {
   return (
     <div className="container">
       <div className="testimonial-section">
-        <h3 className="testimonial-type">Testimonials</h3>
+        <h3 className="testimonial-type">Testimonial</h3>
       </div>
       <div className="testimonial-heading">
         <h2 className="testimonial-heading-details">What designers think</h2>
