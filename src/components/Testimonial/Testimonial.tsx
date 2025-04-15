@@ -1,11 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
-<<<<<<<< HEAD:src/components/Testimonial/Testimonials.tsx
-const Testimonials = () => {
-========
 const Testimonial = () => {
->>>>>>>> ff957becb87eaebbc0ad45630fddde3cb1a7c425:src/components/Testimonial/Testimonial.tsx
   return (
     <div className="container">
       <div className="testimonial-section">
@@ -518,8 +513,4 @@ const Testimonial = () => {
   );
 }
 
-<<<<<<<< HEAD:src/components/Testimonial/Testimonials.tsx
-export default Testimonials
-========
 export default Testimonial
->>>>>>>> ff957becb87eaebbc0ad45630fddde3cb1a7c425:src/components/Testimonial/Testimonial.tsx
