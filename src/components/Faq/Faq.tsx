@@ -31,7 +31,7 @@ const faqs = [
   },
 ];
 
-const Page = () => {
+const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleQuestion = (index: number) => {
@@ -74,4 +74,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Faq;

@@ -114,14 +114,6 @@
 
 
 
-/* .dark {
-  --muted-foreground: #ffffff;
-  --foreground: #ffffff;
-  --background: #000000;
-  --shadow: 0px 16px 40px 0px #ffffff08;
-} */
-
-
 
 @layer utilities{
   .container{
