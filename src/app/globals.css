@@ -79,9 +79,9 @@ body {
   }
 }
 
- 
 @layer utilities {
   .container {
+    @apply mx-auto px-4 md:px-4 max-w-full md:max-w-[764px] lg:max-w-[1280px] overflow-hidden;
     @apply mx-auto px-4 md:px-4 max-w-full md:max-w-[764px] lg:max-w-[1280px] overflow-hidden;
   }
 
@@ -90,7 +90,7 @@ body {
   }
 
   h2 {
-    @apply font-medium text-[28px] text-foreground md:text-[36px] lg:text-[42px] leading-[36px] md:leading-[42px] lg:leading-[48px] tracking-[-1.2px] md:tracking-[-1.8px] lg:tracking-[-2.4px];
+    @apply font-medium text-[28px] text-foreground md:text-[36px] lg:text-[42px] leading-[42px] md:leading-[48px] lg:leading-[54px] tracking-[-1.2px] md:tracking-[-1.8px] lg:tracking-[-2px];
   }
 
   h3 {
@@ -120,7 +120,7 @@ body {
     @apply font-medium text-[#0000008F] text-[14px] leading-[21px] tracking-[-.56px];
   }
 
- a {
+  a {
     @apply font-medium text-[14px] text-primary-foreground leading-[20px] md:leading-[20px] lg:leading-[21px] tracking-[-.4px] md:tracking-[-.5px] lg:tracking-[-.56px];
   }
 
@@ -139,34 +139,46 @@ body {
   .badge {
     @apply bg-white px-3 py-1 rounded-radius font-inter font-medium text-[12px] text-primary-foreground md:text-[13px] lg:text-[14px] text-center leading-[20px] md:leading-[20px] lg:leading-[21px] tracking-[-.4px] md:tracking-[-.5px] lg:tracking-[-.56px];
   }
-
-
 }
 
 @layer components {
-   .testimonial-section{
-    @apply text-center;
-  } 
-  .testimonial-type{
-    @apply border-2 rounded-[100px] inline-block py-[4px] px-[14px] ;
-  } 
-   .testimonial-heading-details{
-    @apply text-center  pt-[8px] ;
+  .nav-sec {
+    @apply top-0 right-1/2 left-0 z-50 fixed flex justify-center items-center mx-auto md:mx-2 lg:mx-6 my-6 lg:translate-x-1/2;
   }
-  .testimonial-user-details{
-      @apply grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px] py-[32px];
-  } 
-   .testimonial-user-background{
-    @apply  w-[95%] md:w-[405px] h-[278px] shadow px-[40px] py-[40px] ;
+  .nav {
+    @apply relative flex items-center gap-[30px];
   }
-  .testimonial-user-details{
-    @apply py-[32px];
+  .nav-logo {
+    @apply font-medium text-[22px] text-foreground hover:text-accent tracking-tighter;
   }
-  .user-about-section{
-    @apply flex items-center gap-[5px] ;
+  .nav-links {
+    @apply flex justify-center items-center gap-[30px];
   }
-  
-  .icons{
-    @apply flex items-center gap-[2px];
+  .nav-single-link {
+    @apply text-foreground hover:text-accent transition-all duration-300 ease-in-out;
+  }
+  .nav-counter {
+    @apply top-[-10px] right-[-10px] absolute flex justify-center items-center bg-primary dark:bg-[#a19b9b] rounded-full size-[14px] font-bold text-[10px] text-foreground;
+  }
+  .footer-sec {
+    @apply flex flex-col justify-center md:justify-start items-center md:items-start bg-primary mx-0 md:mx-2 lg:mx-6 md:px-12 lg:px-16 py-6 pt-10 md:pt-14 lg:pt-20 pb-6 rounded-2xl overflow-hidden md:text-left;
+  }
+  .footer-content {
+    @apply flex md:flex-row flex-col justify-center md:justify-between items-center md:items-start gap-8 w-full text-center;
+  }
+  .footer-input {
+    @apply bg-white p-4 rounded-xl w-full text-[#5f6980];
+  }
+  .footer-nav {
+    @apply flex justify-start items-start gap-8 mb-6 text-left;
+  }
+  .footer-links {
+    @apply flex flex-col justify-start items-start gap-5;
+  }
+  .footer-author {
+    @apply flex justify-center md:justify-start items-center md:items-start w-full;
+  }
+  .footer-Newsletter {
+    @apply flex flex-col justify-center md:justify-start items-center md:items-start gap-6 mb-6;
   }
 }
