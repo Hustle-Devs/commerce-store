@@ -7,7 +7,7 @@ import React from "react";
 import "./globals.css";
 
 const inter = localFont({
-  src: "../fonts/InterFont.ttf",
+  src: "./../fonts/InterFont.ttf",
   variable: "--font-inter",
   weight: "400, 500, 600, 700",
   display: "swap",
