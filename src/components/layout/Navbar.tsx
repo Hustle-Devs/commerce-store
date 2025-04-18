@@ -76,7 +76,7 @@ export default function Navbar() {
           {/* desktob nav start */}
 
           <div className="hidden lg:flex justify-center items-center gap-[30px] bg-background px-5 py-4 rounded-b-2xl overflow-hidden overflow-y-auto text-foreground">
-            <Link href={"/"} className="nav-logo">
+            <Link href={"/"} className="text-[22px] nav-logo">
               Commerce_
             </Link>
             <div className="nav-links">
@@ -185,9 +185,10 @@ export default function Navbar() {
         </div>
 
         {/* mobile trigger end */}
-
-        <ThemeToggle />
       </nav>
+      <div className="top-0 right-2 z-50 fixed flex justify-end items-center md:mx-2 lg:mx-6 my-6 mt-14 w-full h-[61px] -translate-y-1/2">
+        <ThemeToggle />
+      </div>
     </>
   );
 }
