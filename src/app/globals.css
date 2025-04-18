@@ -135,20 +135,19 @@ pt-[40px] sm:pt-[80px] px-[80px];
   }
 
   .pro-paragraph {
-    @apply font-[400] text-[#F9FAFB] text-[16px] md:text-[18px] lg:text-[20px] dark:text-[#ffffff] leading-[28px] md:leading-[30px] lg:leading-[32px] px-[80px] pt-[18px];
+    @apply px-[80px] pt-[18px] font-[400] text-[#F9FAFB] text-[16px] md:text-[18px] lg:text-[20px] dark:text-[#ffffff] leading-[28px] md:leading-[30px] lg:leading-[32px];
   }
 
   .badge {
-    @apply bg-white px-3  py-1 rounded-radius font-inter font-medium text-[12px] text-primary-foreground md:text-[13px] lg:text-[14px] text-center leading-[20px] md:leading-[20px] lg:leading-[21px] tracking-[-.4px] md:tracking-[-.5px] lg:tracking-[-.56px] ;
+    @apply bg-white px-3 py-1 rounded-radius font-inter font-medium text-[12px] text-primary-foreground md:text-[13px] lg:text-[14px] text-center leading-[20px] md:leading-[20px] lg:leading-[21px] tracking-[-.4px] md:tracking-[-.5px] lg:tracking-[-.56px];
   }
-   .icon-pra-content{
-    @apply text-[16px]  font-inter font-normal text-[#ffffff] leading-[26px];
+  .icon-pra-content {
+    @apply font-inter font-normal text-[#ffffff] text-[16px] leading-[26px];
   }
 
-  .pro-cta-content{
+  .pro-cta-content {
     @apply pb-[80px];
   }
-  
 }
 
 @layer components {
@@ -225,13 +224,13 @@ pt-[40px] sm:pt-[80px] px-[80px];
   .icons {
     @apply flex items-center gap-[2px];
   }
-  .pro-cta{
-     @apply lg:overflow-hidden bg-[#111111] h-[579px] rounded-[40px] mt-[80px] mb-[80px] flex flex-col xl:flex-row justify-between gap-[120px];
+  .pro-cta {
+    @apply flex xl:flex-row flex-col justify-between gap-[120px] bg-[#111111] mt-[80px] mb-[80px] rounded-[40px] h-[579px] lg:overflow-hidden;
   }
-  .icon-area{
-    @apply px-[80px] flex items-center gap-[5px] my-[10px] sm:my-[19px] ;
+  .icon-area {
+    @apply flex items-center gap-[5px] my-[10px] sm:my-[19px] px-[80px];
   }
-
-  
- 
+  .faq-sec {
+    @apply flex flex-col justify-center items-center gap-8 lg:gap-12 my-10 md:my-16 lg:my-20;
+  }
 }

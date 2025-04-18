@@ -1,3 +1,4 @@
+import FaqSection from "@/components/Home/faq/Faq";
 import Hero from "@/components/Home/Hero/Hero";
 import LatestTemplates from "@/components/Home/LatestTemplates";
 import ProCta from "@/components/Home/pro-cta/ProCta";
@@ -8,10 +9,11 @@ const page = () => {
   return (
     <>
       <Hero />
-      <LatestTemplates /> 
+      <LatestTemplates />
       <StaffPicks />
       <Testimonial />
       <ProCta />
+      <FaqSection />
     </>
   );
 };
