@@ -1,13 +1,11 @@
 "use client";
 import { Search, ShoppingBasket } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import vector from "@/../public/Image/Vector.svg";
 import { ThemeToggle } from "../toggler/ThemeToggle";
 const navLinks = [
   {
@@ -55,7 +53,7 @@ export default function Navbar() {
     <>
       <nav className="nav-sec">
         <div className="nav">
-          <div className="top-0 -right-[17px] absolute none">
+          {/* <div className="top-0 -right-[17px] absolute none">
             <Image
               src={vector}
               alt="vector image"
@@ -72,10 +70,10 @@ export default function Navbar() {
               height={18}
               className="hidden lg:block w-full rotate-90"
             ></Image>
-          </div>
+          </div> */}
           {/* desktob nav start */}
 
-          <div className="hidden lg:flex justify-center items-center gap-[30px] bg-background px-5 py-4 rounded-b-2xl overflow-hidden overflow-y-auto text-foreground">
+          <div className="nav-content">
             <Link href={"/"} className="text-[22px] nav-logo">
               Commerce_
             </Link>
@@ -85,10 +83,10 @@ export default function Navbar() {
                   href={item.link}
                   key={index}
                   className={cn(
-                    "nav-single-link",
+                    "nav-single-link ",
                     pathname === item.link
                       ? "text-accent font-bold"
-                      : "text-foreground"
+                      : "dark:text-foreground text-primary-foreground"
                   )}
                 >
                   {item.name}
@@ -186,7 +184,7 @@ export default function Navbar() {
 
         {/* mobile trigger end */}
       </nav>
-      <div className="top-0 right-2 z-50 fixed flex justify-end items-center md:mx-2 lg:mx-6 my-6 mt-14 w-full h-[61px] -translate-y-1/2">
+      <div className="top-0 right-2 z-50 fixed flex justify-end items-center md:mx-2 lg:mx-6 my-6 mt-14 h-[61px] -translate-y-1/2">
         <ThemeToggle />
       </div>
     </>

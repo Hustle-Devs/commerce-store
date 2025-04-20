@@ -160,8 +160,14 @@ pt-[40px] sm:pt-[80px] px-[80px];
   .nav-logo {
     @apply tracking-tighter;
   }
+  .nav-content {
+    @apply hidden lg:flex justify-center items-center gap-[30px] bg-background px-5 py-4 w-[564px] h-[60px] overflow-hidden overflow-y-auto text-foreground;
+    clip-path: path(
+      "M 34,60 A 16,16 0 0 1 18, 50 L 18, 18 A 18,18 0,0,0 0, 0 L  564, 0 A 18,18 0,0,0 546, 18 L 546, 50 A 16,16 0 0 1 530, 60 Z"
+    );
+  }
   .nav-links {
-    @apply flex justify-center items-center gap-[30px];
+    @apply flex justify-center items-center gap-[25px];
   }
   .nav-single-link {
     @apply transition-all duration-300 ease-in-out;
