@@ -6,7 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { section } from "motion/react-client";
 const faqs = [
   {
     question: "Which tools do I need to use the library?",
@@ -52,8 +51,8 @@ const FaqSection = () => {
           className="flex-1 rounded divide-y divide-slate-200 w-full"
         >
           {faqs.map((faq, index) => (
-            <FadeUp delay={0.2}>
-              <AccordionItem value={faq?.Value} key={index}>
+            <FadeUp delay={index * 0.2} key={index}>
+              <AccordionItem value={faq?.Value}>
                 <AccordionTrigger className="font-[600] text-[18px] text-muted-foreground leading-[30px]">
                   {" "}
                   {faq?.question}
