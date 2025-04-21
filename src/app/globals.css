@@ -239,4 +239,16 @@ pt-[40px] sm:pt-[80px] px-[80px];
   .faq-sec {
     @apply flex flex-col justify-center items-center gap-8 lg:gap-12 my-10 md:my-16 lg:my-20;
   }
+
+  .contact-section{
+    @apply bg-[#EDE4FC] m-[24px]  h-[464px] rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[0px] rounded-br-[0px];
+  }
+
+  .contact-about{
+    @apply  flex items-center flex-col justify-center py-[124px];
+  }
+
+ 
+
+  
 }
