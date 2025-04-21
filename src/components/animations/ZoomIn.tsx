@@ -3,7 +3,7 @@ import { FadeInProps } from "@/types/animate";
 import { Transition } from "framer-motion";
 import { motion } from "framer-motion"; // ✅ Correct import
 
-const ZoomIn = ({ children, duration = 0.4, delay = 0 }: FadeInProps) => {
+const ZoomIn = ({ children, duration = 0.6, delay = 0 }: FadeInProps) => {
   const transition: Transition = {
     duration,
     delay,
