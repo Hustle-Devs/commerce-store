@@ -5,6 +5,7 @@ import { ChevronDownIcon } from "lucide-react";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import FadeUp from "../animations/FadeUp";
 
 function Accordion({
   ...props
@@ -44,7 +45,9 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <ChevronDownIcon className="size-4 text-muted-foreground transition-transform translate-y-0.5 duration-200 pointer-events-none shrink-0" />
+        <FadeUp delay={0.5}>
+          <ChevronDownIcon className="size-4 text-muted-foreground transition-transform translate-y-0.5 duration-200 pointer-events-none shrink-0" />
+        </FadeUp>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );

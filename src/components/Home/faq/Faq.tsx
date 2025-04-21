@@ -1,10 +1,12 @@
+import FadeUp from "@/components/animations/FadeUp";
+import ZoomIn from "@/components/animations/ZoomIn";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
+import { section } from "motion/react-client";
 const faqs = [
   {
     question: "Which tools do I need to use the library?",
@@ -41,22 +43,26 @@ const FaqSection = () => {
   return (
     <>
       <section className="faq-sec container">
-        <h2>Frequently asked</h2>
+        <ZoomIn>
+          <h2>Frequently asked</h2>
+        </ZoomIn>
         <Accordion
           type="single"
           collapsible
           className="flex-1 rounded divide-y divide-slate-200 w-full"
         >
           {faqs.map((faq, index) => (
-            <AccordionItem value={faq?.Value} key={index}>
-              <AccordionTrigger className="font-[600] text-[18px] text-muted-foreground leading-[30px]">
-                {" "}
-                {faq?.question}
-              </AccordionTrigger>
-              <AccordionContent className="p-4 text-[16px] text-foreground">
-                {faq?.answer}
-              </AccordionContent>
-            </AccordionItem>
+            <FadeUp delay={0.2}>
+              <AccordionItem value={faq?.Value} key={index}>
+                <AccordionTrigger className="font-[600] text-[18px] text-muted-foreground leading-[30px]">
+                  {" "}
+                  {faq?.question}
+                </AccordionTrigger>
+                <AccordionContent className="p-4 text-[16px] text-foreground">
+                  {faq?.answer}
+                </AccordionContent>
+              </AccordionItem>
+            </FadeUp>
           ))}
         </Accordion>
       </section>
