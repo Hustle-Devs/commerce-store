@@ -1,17 +1,29 @@
-import React from 'react'
+import ZoomIn from "@/components/animations/ZoomIn";
+import FadeUp from "@/components/animations/FadeUp";
 
 const Hero = () => {
   return (
     <div className="contact-section">
       <div className="contact-about">
-        <p className="bg-[#ffffff] w-[74px] text-[14px] leading-[21px] font-inter font-medium  text-center px-[4px] py-[12px] rounded-[50px] text-black ">
-          support
-        </p>
-        <h1 className='text-center pt-[12px]'> Help your <br />  customers. </h1>
-        <p className='text-center pb-[107px] pt-[21px]'>use this page to answer common question</p>
+        <ZoomIn delay={0.5}>
+          <p className="bg-[#ffffff] px-[4px] py-[12px] rounded-[50px] w-[74px] font-inter font-medium text-[14px] text-black text-center leading-[21px]">
+            support
+          </p>
+        </ZoomIn>
+        <FadeUp>
+          <h1 className="pt-[12px] text-center">
+            {" "}
+            Help your <br /> customers.{" "}
+          </h1>
+        </FadeUp>
+        <FadeUp delay={0.3}>
+          <p className="pt-[21px] pb-[107px] text-center">
+            use this page to answer common question
+          </p>
+        </FadeUp>
       </div>
     </div>
   );
-}
+};
 
-export default Hero
+export default Hero;

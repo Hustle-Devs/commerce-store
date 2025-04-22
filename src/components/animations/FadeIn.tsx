@@ -3,7 +3,7 @@ import { FadeInProps } from "@/types/animate";
 import { Transition } from "motion";
 import { motion } from "motion/react";
 
-const FadeIn = ({ children, duration = 0.4, delay = 0 }: FadeInProps) => {
+const FadeIn = ({ children, duration = 0.6, delay = 0 }: FadeInProps) => {
   const transition: Transition = {
     duration,
     delay,
