@@ -166,6 +166,11 @@ pt-[40px] sm:pt-[80px] px-[80px];
       "M 34,60 A 16,16 0 0 1 18, 50 L 18, 18 A 18,18 0,0,0 0, 0 L  564, 0 A 18,18 0,0,0 546, 18 L 546, 50 A 16,16 0 0 1 530, 60 Z"
     );
   }
+  .nav-content.scrolled {
+    clip-path: path(
+      "M 34,60 A 16,16 0 0 1 16, 50  L 16, 16 A 16,16 0,0,1 32,0  L  530, 0 A 16,16 0,0,1 546,16 L 546, 50 A 16,16 0 0 1 530, 60 Z"
+    );
+  }
   .nav-links {
     @apply flex justify-center items-center gap-[25px];
   }
@@ -240,15 +245,11 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply flex flex-col justify-center items-center gap-8 lg:gap-12 my-10 md:my-16 lg:my-20;
   }
 
-  .contact-section{
-    @apply bg-[#EDE4FC] m-[24px]  h-[464px] rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[0px] rounded-br-[0px];
+  .contact-section {
+    @apply bg-[#EDE4FC] m-[24px] rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[0px] rounded-br-[0px] h-[464px];
   }
 
-  .contact-about{
-    @apply  flex items-center flex-col justify-center py-[124px];
+  .contact-about {
+    @apply flex flex-col justify-center items-center py-[124px];
   }
-
- 
-
-  
 }

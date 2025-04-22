@@ -28,6 +28,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const navbarRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -49,6 +50,14 @@ export default function Navbar() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [isToggleOpen]);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0); // 0px scroo korlei true hoiye jabe
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <nav className="nav-sec">
@@ -73,7 +82,7 @@ export default function Navbar() {
           </div> */}
           {/* desktob nav start */}
 
-          <div className="nav-content">
+          <div className={`nav-content ${scrolled ? "scrolled" : ""}`}>
             <Link href={"/"} className="text-[22px] nav-logo">
               Commerce_
             </Link>
