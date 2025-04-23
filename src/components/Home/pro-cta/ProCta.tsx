@@ -2,7 +2,36 @@ import FadeUp from "@/components/animations/FadeUp";
 import ZoomIn from "@/components/animations/ZoomIn";
 import Image from "next/image";
 
+const iconFeatures = [
+  {
+    text: "3K+ templates",
+    icon: "/icons/badge-icon.png",
+  },
+  {
+    text: "Responsive layouts",
+    icon: "/icons/badge-icon.png",
+  },
+  {
+    text: "Google Fonts",
+    icon: "/icons/badge-icon.png",
+  },
+  {
+    text: "Shared styles",
+    icon: "/icons/badge-icon.png",
+  },
+  {
+    text: "5k Components",
+    icon: "/icons/badge-icon.png",
+  },
+  {
+    text: "Premium support",
+    icon: "/icons/badge-icon.png",
+  },
+];
+
 const ProCta = () => {
+  console.log(iconFeatures);
+
   return (
     <div className="container">
       <div className="pro-cta">
