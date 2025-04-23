@@ -8,7 +8,7 @@ const link1 = [
   },
   {
     name: "Shop",
-    href: "/shop",
+    href: "/product",
   },
   {
     name: "Collections",
