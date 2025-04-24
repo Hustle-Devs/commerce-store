@@ -237,7 +237,7 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply flex items-center gap-[5px] my-[10px] sm:my-[19px] px-[80px];
   }
   .faq-sec {
-    @apply flex flex-col justify-center items-center gap-8 lg:gap-12 my-10 md:my-16 lg:my-20;
+    @apply flex flex-col justify-center items-center gap-8 lg:gap-12 md:my-16 ;
   }
 
   .contact-section{

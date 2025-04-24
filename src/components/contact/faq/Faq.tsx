@@ -37,8 +37,14 @@ const Faq = () => {
 
   return (
     <>
-      <section className="faq-sec w-[800px] mx-auto container mt-[80px]">
-        <h2>Frequently asked questions</h2>
+      <section className="faq-sec w-[800px] mx-auto">
+        <h2 className="font-inter text-[40px] leading-[48px]  text-[#000000] dark:text-white mb-2">
+          Frequently asked questions
+        </h2>
+        <p className="text-[#000000]/56 text-[18px] font-normal  dark:text-white ">
+          Give your visitors quick answers to common questions about your store
+          like these.
+        </p>
         <Accordion
           type="single"
           collapsible
@@ -46,8 +52,8 @@ const Faq = () => {
         >
           {faqs.map((faq, index) => (
             <AccordionItem value={faq?.Value} key={index}>
-              <AccordionTrigger className="font-[600] text-[18px] text-[#000000] dark:text-white leading-[30px]">
-                {' '}
+              <AccordionTrigger className="font-[600] text-[18px] text-[#000000] dark:text-white leading-[30px] ">
+                {" "}
                 {faq?.question}
               </AccordionTrigger>
               <AccordionContent className="p-4 text-[16px] text-foreground">
