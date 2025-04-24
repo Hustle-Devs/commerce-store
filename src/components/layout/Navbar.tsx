@@ -119,7 +119,7 @@ export default function Navbar() {
             >
               Commerce_
             </Link>
-            <div className="flex flex-col justify-center items-start gap-6 my-7 w-full text-end">
+            <div className="flex flex-col justify-center items-start gap-6 my-9 w-full text-end">
               {navLinks.map((item, idx) => (
                 <Link
                   key={idx}
@@ -152,24 +152,51 @@ export default function Navbar() {
         </div>
 
         {/* Mobile trigger */}
-        <div className="lg:hidden top-6 right-16 z-50 fixed">
-          <button
-            onClick={() => setIsToggleOpen(!isToggleOpen)}
-            aria-label="Toggle navigation"
-            className={cn(
-              "relative h-10 w-10 flex flex-col justify-center items-center ",
-              isToggleOpen &&
-                "[&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:opacity-0 [&_span:nth-child(3)]:-rotate-45 hidden"
-            )}
-          >
-            <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
-            <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition" />
-            <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
-          </button>
+        <div className="lg:hidden top-4 right-0 left-0 z-40 fixed px-5">
+          <div className="flex justify-between items-center p-2 rounded-xl">
+            {/* Left: Logo */}
+            <Link
+              href="/"
+              className="font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
+            >
+              Commerce_
+            </Link>
+
+            {/* Right: Hamburger */}
+            <button
+              onClick={() => setIsToggleOpen(!isToggleOpen)}
+              aria-label="Toggle navigation"
+              className={cn(
+                "relative h-10 w-10 flex flex-col justify-center items-center",
+                isToggleOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+              )}
+            >
+              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
+              <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition-transform duration-300" />
+              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
+            </button>
+          </div>
         </div>
+        {/* <div className="lg:hidden top-6 z-50 fixed bg-gray-200 w-full">
+          <div className="lg:hidden top-6 right-16 z-50 fixed">
+            <button
+              onClick={() => setIsToggleOpen(!isToggleOpen)}
+              aria-label="Toggle navigation"
+              className={cn(
+                "relative h-10 w-10 flex flex-col justify-center items-center ",
+                isToggleOpen &&
+                  "[&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:opacity-0 [&_span:nth-child(3)]:-rotate-45 hidden"
+              )}
+            >
+              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
+              <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition" />
+              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
+            </button>
+          </div>
+        </div> */}
 
         {/* Theme toggle */}
-        <div className="top-[61px] right-2 fixed lg:mx-6 my-6">
+        <div className="top-[61px] right-2 fixed lg:mx-6 my-2">
           <ThemeToggle />
         </div>
       </nav>

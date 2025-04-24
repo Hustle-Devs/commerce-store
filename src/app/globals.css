@@ -165,15 +165,8 @@ pt-[40px] sm:pt-[80px] px-[80px];
   }
   .nav-content {
     @apply hidden lg:flex justify-center items-center gap-[30px] bg-background px-5 py-4 w-[564px] h-[60px] overflow-hidden overflow-y-auto text-foreground;
-    /* clip-path: path(
-      "M 34,60 A 16,16 0 0 1 18, 50 L 18, 18 A 18,18 0,0,0 0, 0 L  564, 0 A 18,18 0,0,0 546, 18 L 546, 50 A 16,16 0 0 1 530, 60 Z"
-    ); */
   }
-  /* .nav-content.scrolled {
-    clip-path: path(
-      "M 34,60 A 16,16 0 0 1 16, 50  L 16, 16 A 16,16 0,0,1 32,0  L  530, 0 A 16,16 0,0,1 546,16 L 546, 50 A 16,16 0 0 1 530, 60 Z"
-    );
-  } */
+
   .nav-links {
     @apply flex justify-center items-center gap-[25px];
   }
@@ -184,7 +177,7 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply top-[-10px] right-[-10px] absolute flex justify-center items-center bg-primary dark:bg-[#a19b9b] rounded-full size-[14px] font-bold text-[10px] text-foreground;
   }
   .hero-sec {
-    @apply z-30 relative flex items-center bg-[url('/bg/hero.png')] bg-cover bg-center mx-5 md:mx-2 lg:mx-6 my-6 rounded-2xl;
+    @apply z-30 relative flex items-center bg-[url('/bg/hero.png')] bg-cover bg-center mx-5 md:mx-2 lg:mx-6 my-2 lg:my-6 rounded-2xl;
   }
   .hero-content {
     @apply flex flex-col justify-start items-start gap-8 my-20 md:my-30 lg:my-40 ml-8 sm:ml-16 max-w-[660px];
