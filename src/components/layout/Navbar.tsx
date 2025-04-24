@@ -85,10 +85,10 @@ export default function Navbar() {
               ))}
             </div>
             <div className="z-50 flex items-center gap-2.5">
-              <span className="hover:text-accent">
+              <span className="hover:text-accent cursor-pointer">
                 <Search />
               </span>
-              <span className="relative hover:text-accent">
+              <span className="relative hover:text-accent cursor-pointer">
                 <ShoppingBasket />
                 <span className="nav-counter">0</span>
               </span>
@@ -163,43 +163,33 @@ export default function Navbar() {
             </Link>
 
             {/* Right: Hamburger */}
-            <button
-              onClick={() => setIsToggleOpen(!isToggleOpen)}
-              aria-label="Toggle navigation"
-              className={cn(
-                "relative h-10 w-10 flex flex-col justify-center items-center",
-                isToggleOpen ? "opacity-0 pointer-events-none" : "opacity-100"
-              )}
-            >
-              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
-              <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition-transform duration-300" />
-              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
-            </button>
-          </div>
-        </div>
-        {/* <div className="lg:hidden top-6 z-50 fixed bg-gray-200 w-full">
-          <div className="lg:hidden top-6 right-16 z-50 fixed">
-            <button
-              onClick={() => setIsToggleOpen(!isToggleOpen)}
-              aria-label="Toggle navigation"
-              className={cn(
-                "relative h-10 w-10 flex flex-col justify-center items-center ",
-                isToggleOpen &&
-                  "[&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:opacity-0 [&_span:nth-child(3)]:-rotate-45 hidden"
-              )}
-            >
-              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
-              <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition" />
-              <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
-            </button>
-          </div>
-        </div> */}
+            <div className="flex justify-center items-center gap-2">
+              <button
+                onClick={() => setIsToggleOpen(!isToggleOpen)}
+                aria-label="Toggle navigation"
+                className={cn(
+                  "relative h-10 w-10 flex flex-col justify-center items-center",
+                  isToggleOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+                )}
+              >
+                <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
+                <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition-transform duration-300" />
+                <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
+              </button>
 
-        {/* Theme toggle */}
-        <div className="top-[61px] right-2 fixed lg:mx-6 my-2">
-          <ThemeToggle />
+              <ThemeToggle />
+            </div>
+          </div>
         </div>
       </nav>
+
+      {/* Theme toggle */}
+
+      <div className="hidden top-0 left-1/2 z-40 fixed lg:flex justify-end items-center my-9 -translate-x-1/2 container">
+        <div className="z-50 lg:pr-6 xl:pr-2">
+          <ThemeToggle />
+        </div>
+      </div>
     </>
   );
 }

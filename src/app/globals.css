@@ -81,7 +81,7 @@ body {
 
 @layer utilities {
   .container {
-    @apply mx-auto px-4 md:px-4 max-w-full lg:max-w-[1280px] overflow-hidden;
+    @apply mx-auto px-4 lg:px-0 max-w-full lg:max-w-[1280px] overflow-hidden;
   }
 
   h1 {
