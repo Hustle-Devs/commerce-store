@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, ShoppingBasket } from "lucide-react";
+import { Search, ShoppingBasket, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -95,21 +95,31 @@ export default function Navbar() {
             </div>
           </motion.div>
 
-          {/* Mobile nav start */}
+          {/* Mobile nav */}
           <div
             ref={navbarRef}
             className={cn(
-              "fixed top-0 left-0 flex flex-col justify-start items-start h-[70vh] w-[60vw] bg-background gap-[30px] z-50 transition-transform duration-500 ease-in-out lg:hidden supports-[backdrop-filter]:bg-background/90 backdrop-blur px-5 py-10 rounded-b-2xl overflow-hidden overflow-y-auto text-foreground",
-              isToggleOpen ? "translate-x-0" : "-translate-x-full"
+              "fixed top-0 right-0 flex flex-col items-end justify-start h-full w-[60vw] bg-background z-50 transition-transform duration-500 ease-in-out lg:hidden supports-[backdrop-filter]:bg-background/90 backdrop-blur px-5 py-10 rounded-b-2xl overflow-y-auto",
+              isToggleOpen ? "translate-x-0" : "translate-x-full"
             )}
           >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsToggleOpen(false)}
+              className="self-start hover:bg-gray-200 dark:hover:bg-gray-700 mb-8 p-2 rounded-md text-foreground"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Brand */}
             <Link
               href="/"
               className="font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
             >
               Commerce_
             </Link>
-            <div className="flex flex-col justify-center items-start gap-[30px] w-full">
+            <div className="flex flex-col justify-center items-start gap-6 my-7 w-full text-end">
               {navLinks.map((item, idx) => (
                 <Link
                   key={idx}
@@ -126,7 +136,7 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className="z-50 flex items-center gap-2.5">
+            <div className="z-50 flex justify-end items-end gap-2.5 w-full">
               <span className="hover:text-accent">
                 <Search />
               </span>
@@ -140,27 +150,26 @@ export default function Navbar() {
           </div>
           {/* Mobile nav end */}
         </div>
-        {/* Mobile trigger start */}
-        <div className="lg:hidden top-0 right-16 z-50 fixed my-6 w-[40px]">
+
+        {/* Mobile trigger */}
+        <div className="lg:hidden top-6 right-16 z-50 fixed">
           <button
-            className={cn(
-              "relative block h-10 w-full order-10 self-start justify-between",
-              isToggleOpen &&
-                "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0"
-            )}
             onClick={() => setIsToggleOpen(!isToggleOpen)}
-            aria-expanded={isToggleOpen ? "true" : "false"}
             aria-label="Toggle navigation"
+            className={cn(
+              "relative h-10 w-10 flex flex-col justify-center items-center ",
+              isToggleOpen &&
+                "[&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:opacity-0 [&_span:nth-child(3)]:-rotate-45 hidden"
+            )}
           >
-            <div className="top-1/2 right-0 absolute w-6 -translate-y-1/2">
-              <span className="block absolute bg-slate-900 dark:bg-white rounded-full w-9/12 h-0.5 transition-all -translate-y-2 duration-300"></span>
-              <span className="block absolute bg-slate-900 dark:bg-white rounded-full w-6 h-0.5 transition duration-300"></span>
-              <span className="block absolute bg-slate-900 dark:bg-white rounded-full w-1/2 h-0.5 origin-top-left transition-all translate-y-2 duration-300"></span>
-            </div>
+            <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
+            <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition" />
+            <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition" />
           </button>
         </div>
-        {/* Mobile trigger end */}
-        <div className="top-[61px] right-2 fixed flex justify-end items-center md:mx-2 lg:mx-6 my-6 mt-14">
+
+        {/* Theme toggle */}
+        <div className="top-[61px] right-2 fixed lg:mx-6 my-6">
           <ThemeToggle />
         </div>
       </nav>
