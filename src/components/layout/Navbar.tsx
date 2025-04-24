@@ -113,20 +113,20 @@ export default function Navbar() {
             </button>
 
             {/* Brand */}
-            <Link
+            {/* <Link
               href="/"
               className="font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
             >
               Commerce_
-            </Link>
-            <div className="flex flex-col justify-center items-start gap-6 my-12 w-full text-end">
+            </Link> */}
+            <div className="flex flex-col justify-center items-start gap-6 mb-12 w-full text-end">
               {navLinks.map((item, idx) => (
                 <Link
                   key={idx}
                   onClick={() => setIsToggleOpen(false)}
                   href={item.link}
                   className={cn(
-                    "text-foreground hover:text-accent transition-all duration-300 ease-in-out w-full",
+                    "text-foreground hover:text-accent transition-all duration-300 ease-in-out w-full text-[16px]",
                     pathname === item.link
                       ? "text-accent font-bold"
                       : "text-foreground"
