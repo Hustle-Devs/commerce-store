@@ -248,4 +248,7 @@ pt-[40px] sm:pt-[80px] px-[80px];
   .contact-about {
     @apply flex flex-col justify-center items-center py-[124px];
   }
+  .hover\:bg-accent:hover {
+    background: none;
+  }
 }

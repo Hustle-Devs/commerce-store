@@ -106,7 +106,7 @@ export default function Navbar() {
             {/* Close Button */}
             <button
               onClick={() => setIsToggleOpen(false)}
-              className="self-start hover:bg-gray-200 dark:hover:bg-gray-700 mb-8 p-2 rounded-md text-foreground"
+              className="self-start hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-md text-foreground"
               aria-label="Close menu"
             >
               <X size={24} />
@@ -119,7 +119,7 @@ export default function Navbar() {
             >
               Commerce_
             </Link>
-            <div className="flex flex-col justify-center items-start gap-6 my-9 w-full text-end">
+            <div className="flex flex-col justify-center items-start gap-6 my-12 w-full text-end">
               {navLinks.map((item, idx) => (
                 <Link
                   key={idx}
@@ -157,7 +157,7 @@ export default function Navbar() {
             {/* Left: Logo */}
             <Link
               href="/"
-              className="font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
+              className="pl-3 font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
             >
               Commerce_
             </Link>
@@ -172,8 +172,8 @@ export default function Navbar() {
                   isToggleOpen ? "opacity-0 pointer-events-none" : "opacity-100"
                 )}
               >
-                <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
-                <span className="block bg-slate-900 dark:bg-white my-1 w-6 h-0.5 transition-transform duration-300" />
+                <span className="block bg-slate-900 dark:bg-white w-9/12 h-0.5 transition-transform duration-300 4" />
+                <span className="block bg-slate-900 dark:bg-white my-1 w-5 h-0.5 transition-transform duration-300" />
                 <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
               </button>
 
