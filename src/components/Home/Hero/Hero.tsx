@@ -10,7 +10,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <>
-      <section className="mx-5 max-w-full">
+      <section className="mx-4 max-w-full">
         <div className="hero-sec container">
           <div className="top-3.5 right-12 absolute flex items-center gap-2">
             <ZoomIn delay={0.8}>

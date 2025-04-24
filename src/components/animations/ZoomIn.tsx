@@ -1,7 +1,6 @@
 "use client";
 import { FadeInProps } from "@/types/animate";
-import { Transition } from "framer-motion";
-import { motion } from "framer-motion"; // ✅ Correct import
+import { motion, Transition } from "framer-motion";
 
 const ZoomIn = ({ children, duration = 0.6, delay = 0 }: FadeInProps) => {
   const transition: Transition = {
@@ -14,7 +13,7 @@ const ZoomIn = ({ children, duration = 0.6, delay = 0 }: FadeInProps) => {
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: false, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.7 }}
       transition={transition}
     >
       {children}
