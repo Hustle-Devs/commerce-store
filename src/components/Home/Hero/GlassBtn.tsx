@@ -13,7 +13,10 @@ const GlassBtn = ({ text, className = "" }: ShopButtonProps) => {
     <>
       <Button
         variant={"default"}
-        className={cn(" bg-[#FFFFFF8F] p-0 rounded-full", className)}
+        className={cn(
+          " bg-[#FFFFFF8F] p-0 rounded-full duration-500",
+          className
+        )}
       >
         <span className="py-[10px] pr-[15px] pl-[22px] text-[14px] text-black">
           {text}
