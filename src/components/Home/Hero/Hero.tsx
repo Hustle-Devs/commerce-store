@@ -48,9 +48,9 @@ const Hero = () => {
                 </h1>
               </FadeUp>
               <FadeUp delay={0.2}>
-                <p>
-                  Designed with Framer, this template makes it easy to turn{" "}
-                  <br /> your website into a powerful ecommerce store
+                <p className="max-w-[480px]">
+                  Designed with Framer, this template makes it easy to turn your
+                  website into a powerful ecommerce store
                 </p>
               </FadeUp>
             </div>
