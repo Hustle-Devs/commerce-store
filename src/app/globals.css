@@ -162,15 +162,15 @@ pt-[40px] sm:pt-[80px] px-[80px];
   }
   .nav-content {
     @apply hidden lg:flex justify-center items-center gap-[30px] bg-background px-5 py-4 w-[564px] h-[60px] overflow-hidden overflow-y-auto text-foreground;
-    clip-path: path(
+    /* clip-path: path(
       "M 34,60 A 16,16 0 0 1 18, 50 L 18, 18 A 18,18 0,0,0 0, 0 L  564, 0 A 18,18 0,0,0 546, 18 L 546, 50 A 16,16 0 0 1 530, 60 Z"
-    );
+    ); */
   }
-  .nav-content.scrolled {
+  /* .nav-content.scrolled {
     clip-path: path(
       "M 34,60 A 16,16 0 0 1 16, 50  L 16, 16 A 16,16 0,0,1 32,0  L  530, 0 A 16,16 0,0,1 546,16 L 546, 50 A 16,16 0 0 1 530, 60 Z"
     );
-  }
+  } */
   .nav-links {
     @apply flex justify-center items-center gap-[25px];
   }
