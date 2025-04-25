@@ -180,7 +180,7 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply z-30 relative flex items-center bg-[url('/bg/hero.png')] bg-cover bg-center mx-5 md:mx-2 lg:mx-6 my-2 lg:my-6 rounded-2xl;
   }
   .hero-content {
-    @apply flex flex-col justify-start items-start gap-8 my-20 md:my-30 lg:my-40 ml-8 sm:ml-16 max-w-[660px];
+    @apply flex flex-col justify-start items-start gap-8 my-20 md:my-30 lg:my-40 ml-6 sm:ml-8 lg:ml-10 xl:ml-16 max-w-[660px];
   }
   .hero-shopify-btn {
     @apply flex justify-center items-center gap-[3px] px-3 py-1 rounded-full duration-500;
@@ -247,8 +247,5 @@ pt-[40px] sm:pt-[80px] px-[80px];
 
   .contact-about {
     @apply flex flex-col justify-center items-center py-[124px];
-  }
-  .hover\:bg-accent:hover {
-    background: none;
   }
 }
