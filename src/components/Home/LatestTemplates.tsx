@@ -54,40 +54,41 @@ const latestTemplates = [
 export default function LatestTemplates() {
   return (
     <section className="py-20 container">
-      <div className="mx-auto px-4 max-w-6xl">
+      <div className="mx-auto px-4 max-w-6xl ">
         <ZoomIn>
           <h3>Latest Templates</h3>
         </ZoomIn>
         <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {latestTemplates.map((template, id) => (
-            <div key={id} className="p-4">
-              <div className="">
-                <ZoomIn>
+  <ZoomIn>
+            <div key={id} className="pt-4">
+              <div>
+              
                   <img
                     src={template.image}
                     alt={template.title}
                     className="w-full h-full object-cover"
                   />
-                </ZoomIn>
+                
               </div>
               <div className="flex justify-between items-center pt-3">
                 <div>
-                  <FadeUp>
+                  
                     <h4>{template.title}</h4>
-                  </FadeUp>
-                  <FadeUp delay={0.4}>
+                 
                     <p className="text-muted-foreground">{template.category}</p>
-                  </FadeUp>
+                  
                 </div>
                 <div>
-                  <FadeUp delay={0.4}>
+                 
                     <h5 className="bg-[#F9FAFB] px-3 py-1 rounded-3xl text-secondary-foreground">
                       {template.price}
                     </h5>
-                  </FadeUp>
+                  
                 </div>
               </div>
             </div>
+            </ZoomIn>
           ))}
         </div>
       </div>

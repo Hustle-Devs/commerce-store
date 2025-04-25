@@ -150,11 +150,11 @@ const ProCta = () => {
               </div>
             </div>
             <div className="hidden sm:flex justify-center items-center bg-[#7E36F4] mx-auto mb-[80px] rounded-[40px] w-[70%] sm:w-[400px] md:w-[500px] lg:w-[540px] h-[54px]">
-              <ZoomIn delay={0.3}>
+              
                 <button className="font-semibold text-[#ffffff] text-[18px] leading-[30px]">
                   Start your 7 day trial
                 </button>
-              </ZoomIn>
+              
             </div>
           </div>
         </div>

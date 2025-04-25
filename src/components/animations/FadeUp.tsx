@@ -13,7 +13,7 @@ const FadeUp = ({ children, duration = 0.6, delay = 0 }: FadeInProps) => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.7 }}
       transition={transition}
     >
       {children}

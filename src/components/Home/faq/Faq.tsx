@@ -48,12 +48,12 @@ const FaqSection = () => {
         <Accordion
           type="single"
           collapsible
-          className="flex-1 rounded divide-y divide-slate-200 w-full"
+          className="flex-1 rounded w-full"
         >
           {faqs.map((faq, index) => (
             <FadeUp delay={index * 0.2} key={index}>
               <AccordionItem value={faq?.Value}>
-                <AccordionTrigger className="font-[600] text-[18px] text-muted-foreground leading-[30px]">
+                <AccordionTrigger className="font-[600] text-[18px] text-muted-foreground leading-[30px] cursor-pointer">
                   {" "}
                   {faq?.question}
                 </AccordionTrigger>
