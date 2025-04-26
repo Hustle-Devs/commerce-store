@@ -10,7 +10,7 @@ import { ThemeToggle } from "../toggler/ThemeToggle";
 const navLinks = [
   {
     name: "Shop",
-    link: "/shop",
+    link: "/product",
   },
   {
     name: "Collections",
