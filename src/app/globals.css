@@ -236,7 +236,7 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply flex items-center gap-[2px];
   }
   .pro-cta {
-    @apply flex xl:flex-row flex-col justify-between gap-[120px] bg-[#111111] mt-[80px] mb-[80px] rounded-[40px] h-[579px] lg:overflow-hidden;
+    @apply flex xl:flex-row flex-col justify-between gap-[120px] bg-[#111111] mt-[80px] mb-[80px] rounded-[40px] lg:overflow-hidden;
   }
   .icon-area {
     @apply flex items-center gap-[5px] my-[10px] sm:my-[19px] px-[80px];

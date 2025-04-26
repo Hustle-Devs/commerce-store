@@ -1,5 +1,6 @@
 import FadeUp from "@/components/animations/FadeUp";
 import ZoomIn from "@/components/animations/ZoomIn";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const iconFeatures = [
@@ -8,21 +9,23 @@ const iconFeatures = [
     icon: "/icons/badge-icon.png",
   },
   {
-    text: "Responsive layouts",
-    icon: "/icons/badge-icon.png",
-  },
-  {
-    text: "Google Fonts",
-    icon: "/icons/badge-icon.png",
-  },
-  {
     text: "Shared styles",
+    icon: "/icons/badge-icon.png",
+  },
+  {
+    text: "Responsive layouts",
     icon: "/icons/badge-icon.png",
   },
   {
     text: "5k Components",
     icon: "/icons/badge-icon.png",
   },
+  {
+    text: "Google Fonts",
+    icon: "/icons/badge-icon.png",
+  },
+  
+  
   {
     text: "Premium support",
     icon: "/icons/badge-icon.png",
@@ -36,127 +39,30 @@ const ProCta = () => {
     <div className="container">
       <div className="pro-cta">
         <div className="pro-cta-content">
-          <div>
             <FadeUp>
               <h2 className="pro-heading">Pro Access</h2>
             </FadeUp>
             <FadeUp delay={0.3}>
-              <p className="pro-paragraph">
+              <p className="pro-paragraph pb-5">
                 Launching your next website has never been so fast and
                 effortless. Browse hundreds of beautifully designed Framer
                 templates and go live in minutes.
               </p>
             </FadeUp>
-            <div className="flex sm:flex-row flex-col items-center py-[5px] sm:py-[36px]">
-              <div>
-                <FadeUp delay={0.6}>
-                  <div className="icon-area">
-                    <div className="icon-image">
-                      <Image
-                        className=""
-                        src="/icons/badge-icon.png"
-                        width={16}
-                        height={16}
-                        alt="badge-icon"
-                      />
-                    </div>
-                    <div className="icon-content">
-                      <p className="icon-pra-content">3K+ templates</p>
-                    </div>
-                  </div>
-                </FadeUp>
-                <FadeUp delay={0.6}>
-                  <div className="icon-area">
-                    <div className="icon-image">
-                      <Image
-                        className=""
-                        src="/icons/badge-icon.png"
-                        width={16}
-                        height={16}
-                        alt="badge-icon"
-                      />
-                    </div>
-                    <div className="icon-content">
-                      <p className="icon-pra-content">Responsive layouts</p>
-                    </div>
-                  </div>
-                </FadeUp>
-                <FadeUp delay={0.6}>
-                  <div className="icon-area">
-                    <div className="icon-image">
-                      <Image
-                        className=""
-                        src="/icons/badge-icon.png"
-                        width={16}
-                        height={16}
-                        alt="badge-icon"
-                      />
-                    </div>
-                    <div className="icon-content">
-                      <p className="icon-pra-content">Google Fonts</p>
-                    </div>
-                  </div>
-                </FadeUp>
-              </div>
-              <div>
-                <FadeUp delay={0.6}>
-                  <div className="icon-area">
-                    <div className="icon-image">
-                      <Image
-                        className=""
-                        src="/icons/badge-icon.png"
-                        width={16}
-                        height={16}
-                        alt="badge-icon"
-                      />
-                    </div>
-                    <div className="icon-content">
-                      <p className="icon-pra-content">Shared styles</p>
-                    </div>
-                  </div>
-                </FadeUp>
-                <FadeUp delay={0.6}>
-                  <div className="icon-area">
-                    <div className="icon-image">
-                      <Image
-                        className=""
-                        src="/icons/badge-icon.png"
-                        width={16}
-                        height={16}
-                        alt="badge-icon"
-                      />
-                    </div>
-                    <div className="icon-content">
-                      <p className="icon-pra-content">5k Components</p>
-                    </div>
-                  </div>
-                </FadeUp>
-                <FadeUp delay={0.6}>
-                  <div className="icon-area">
-                    <div className="icon-image">
-                      <Image
-                        className=""
-                        src="/icons/badge-icon.png"
-                        width={16}
-                        height={16}
-                        alt="badge-icon"
-                      />
-                    </div>
-                    <div className="icon-content">
-                      <p className="icon-pra-content"> Premium support</p>
-                    </div>
-                  </div>
-                </FadeUp>
-              </div>
-            </div>
-            <div className="hidden sm:flex justify-center items-center bg-[#7E36F4] mx-auto mb-[80px] rounded-[40px] w-[70%] sm:w-[400px] md:w-[500px] lg:w-[540px] h-[54px]">
-              
-                <button className="font-semibold text-[#ffffff] text-[18px] leading-[30px]">
-                  Start your 7 day trial
-                </button>
-              
-            </div>
+            <div className="grid grid-cols-1 pro-paragraph md:grid-cols-2">
+         {iconFeatures.map((Item, index) => (
+              <ZoomIn delay={index * 0.2} key={index}>
+                <div className="flex items-center gap-2 mb-4">
+                <img src={Item.icon} alt="icon" className="w-4 h-4" />
+                <p className="text-white font-normal">{Item.text}</p>
+                </div>
+              </ZoomIn>
+         ))} 
           </div>
+         <div className="pro-paragraph">
+         <Button variant={"primary"} className="w-full py-6 rounded-3xl">
+         Get Pro Access </Button>  
+         </div>      
         </div>
         <div className="hidden lg:block lg:w-[95%]">
           <Image
