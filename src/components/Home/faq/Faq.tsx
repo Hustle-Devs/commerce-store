@@ -42,9 +42,9 @@ const FaqSection = () => {
   return (
     <>
       <section className="faq-sec container">
-        <ZoomIn>
+        <FadeUp>
           <h2>Frequently asked</h2>
-        </ZoomIn>
+        </FadeUp>
         <Accordion
           type="single"
           collapsible
