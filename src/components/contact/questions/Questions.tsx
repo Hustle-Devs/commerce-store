@@ -4,6 +4,7 @@ import ZoomIn from "@/components/animations/ZoomIn";
 const Questions = () => {
   return (
     <div className="mx-auto mt-[48px] mb-[80px] w-[600px] container">
+    <div className="mx-auto mt-[48px] mb-[80px] w-[600px] container">
       <div className="questions-sec">
         <ZoomIn>
           <h2 className="font-inter font-medium text-[#000000] text-[28px] md:text-[36px] lg:text-[40px] dark:text-white text-center md:leading-[30px] lg:leading-[48px]">

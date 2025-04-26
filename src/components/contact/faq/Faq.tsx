@@ -37,10 +37,14 @@ const Faq = () => {
 
   return (
     <>
-      <section className="mx-auto mt-[80px] w-[800px] faq-sec container">
-        <ZoomIn>
-          <h2>Frequently asked questions</h2>
-        </ZoomIn>
+      <section className="mx-auto w-[800px] faq-sec">
+        <h2 className="mb-2 font-inter text-[#000000] text-[40px] dark:text-white leading-[48px]">
+          Frequently asked questions
+        </h2>
+        <p className="font-normal text-[#000000]/56 text-[18px] dark:text-white">
+          Give your visitors quick answers to common questions about your store
+          like these.
+        </p>
         <Accordion
           type="single"
           collapsible
