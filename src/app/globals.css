@@ -190,10 +190,10 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply flex justify-center items-center gap-[3px] px-3 py-1 rounded-full;
   }
   .footer-sec {
-    @apply flex flex-col justify-center md:justify-start items-center md:items-start bg-primary mx-0 md:mx-2 lg:mx-6 md:px-12 lg:px-16 py-6 pt-10 md:pt-14 lg:pt-20 pb-6 rounded-2xl overflow-hidden md:text-left;
+    @apply flex flex-col justify-center sm:justify-start items-center md:items-start bg-primary mx-0 md:mx-2  md:px-12 lg:px-16 py-6 px-5 pt-10 md:pt-14 lg:pt-20 pb-6 rounded-2xl overflow-hidden md:text-left;
   }
   .footer-content {
-    @apply flex md:flex-row flex-col justify-center md:justify-between items-center md:items-start gap-8 w-full text-center;
+    @apply flex sm:flex-row flex-col justify-center md:justify-between items-start md:items-start gap-8 w-full text-center;
   }
   .footer-input {
     @apply bg-white p-4 rounded-xl w-full text-[#5f6980];
@@ -205,10 +205,10 @@ pt-[40px] sm:pt-[80px] px-[80px];
     @apply flex flex-col justify-start items-start gap-5;
   }
   .footer-author {
-    @apply flex justify-center md:justify-start items-center md:items-start w-full;
+    @apply flex md:justify-start items-center md:items-start w-full;
   }
   .footer-Newsletter {
-    @apply flex flex-col justify-center md:justify-start items-center md:items-start gap-6 mb-6;
+    @apply flex flex-col justify-center md:justify-start  md:items-start gap-6 mb-6;
   }
   .testimonial-section {
     @apply text-center;
