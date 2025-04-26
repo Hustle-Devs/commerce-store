@@ -43,9 +43,9 @@ const Footer = () => {
     <>
       <section className="footer-sec">
         <div className="footer-content">
-          <div className="flex flex-col justify-start items-start gap-8 md:gap-10 lg:gap-12">
+          <div className="flex flex-col gap-8 md:gap-10 lg:gap-12">
             <div className="footer-Newsletter">
-              <h3 className="text-secondary-foreground">
+              <h3 className="text-secondary-foreground text-start">
                 Join our newsletter and get 20% <br />
                 off your first purchase with us.
               </h3>
