@@ -60,7 +60,7 @@ export default function StaffPicks() {
         </FadeUp>
         <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {staffPicks.map((template, id) => (
-            <ZoomIn>
+            <FadeUp>
             <div key={id} className="pt-4">
               <div>
                 
@@ -89,7 +89,7 @@ export default function StaffPicks() {
                 </div>
               </div>
             </div>
-            </ZoomIn>
+            </FadeUp>
           ))}
         </div>
       </div>
