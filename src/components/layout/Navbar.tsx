@@ -1,29 +1,19 @@
 "use client";
-import { Search, ShoppingBasket } from "lucide-react";
+
+import { motion } from "framer-motion";
+import { Search, ShoppingBasket, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
-
 import { ThemeToggle } from "../toggler/ThemeToggle";
+
 const navLinks = [
-  {
-    name: "Shop",
-    link: "/product",
-  },
-  {
-    name: "Collections",
-    link: "/collections",
-  },
-  {
-    name: "Blog",
-    link: "/blog",
-  },
-  {
-    name: "Support",
-    link: "/support",
-  },
+  { name: "Shop", link: "/shop" },
+  { name: "Collections", link: "/collections" },
+  { name: "Blog", link: "/blog" },
+  { name: "Support", link: "/support" },
 ];
 
 export default function Navbar() {
@@ -31,6 +21,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const navbarRef = useRef<HTMLDivElement>(null);
+
+  // Close toggle when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -38,61 +30,51 @@ export default function Navbar() {
         !navbarRef.current.contains(e.target as Node) &&
         isToggleOpen
       ) {
-        setTimeout(() => {
-          setIsToggleOpen(false);
-        }, 50);
+        setTimeout(() => setIsToggleOpen(false), 50);
       }
     };
-    if (isToggleOpen) {
-      document.addEventListener("click", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
+    if (isToggleOpen) document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, [isToggleOpen]);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0); // 0px scroo korlei true hoiye jabe
-    };
 
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Define clip-path states
+  const clipDefault =
+    'path("M 34,60 A 16,16 0 0 1 18, 50 L 18, 18 A 18,18 0,0,0 0, 0 L 564, 0 A 18,18 0,0,0 546, 18 L 546, 50 A 16,16 0 0 1 530, 60 Z")';
+  const clipScrolled =
+    'path("M 34,60 A 16,16 0 0 1 16, 50 L 16, 16 A 16,16 0,0,1 32,0 L 530, 0 A 16,16 0,0,1 546,16 L 546, 50 A 16,16 0 0 1 530, 60 Z")';
+
   return (
     <>
       <nav className="nav-sec">
         <div className="nav">
-          {/* <div className="top-0 -right-[17px] absolute none">
-            <Image
-              src={vector}
-              alt="vector image"
-              width={18}
-              height={18}
-              className="hidden lg:block"
-            ></Image>
-          </div>
-          <div className="top-0 -left-[18px] absolute">
-            <Image
-              src={vector}
-              alt="vector image"
-              width={18}
-              height={18}
-              className="hidden lg:block w-full rotate-90"
-            ></Image>
-          </div> */}
-          {/* desktob nav start */}
-
-          <div className={`nav-content ${scrolled ? "scrolled" : ""}`}>
-            <Link href={"/"} className="text-[22px] nav-logo">
+          {/* Desktop nav with clip-path animation */}
+          <motion.div
+            className={`nav-content hidden lg:flex justify-center items-center gap-[30px] bg-background px-5 py-4 w-[564px] h-[60px] overflow-hidden overflow-y-auto text-foreground`}
+            initial={{
+              clipPath: clipDefault,
+            }}
+            animate={{
+              clipPath: scrolled ? clipScrolled : clipDefault,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <Link href="/" className="text-[22px] nav-logo">
               Commerce_
             </Link>
-            <div className="nav-links">
-              {navLinks.map((item, index) => (
+            <div className="flex gap-[30px] nav-links">
+              {navLinks.map((item, idx) => (
                 <Link
+                  key={idx}
                   href={item.link}
-                  key={index}
                   className={cn(
-                    "nav-single-link ",
+                    "nav-single-link",
                     pathname === item.link
                       ? "text-accent font-bold"
                       : "dark:text-foreground text-primary-foreground"
@@ -103,39 +85,48 @@ export default function Navbar() {
               ))}
             </div>
             <div className="z-50 flex items-center gap-2.5">
-              <span className="hover:text-accent">
+              <span className="hover:text-accent cursor-pointer">
                 <Search />
               </span>
-              <span className="relative hover:text-accent">
+              <span className="relative hover:text-accent cursor-pointer">
                 <ShoppingBasket />
-
                 <span className="nav-counter">0</span>
               </span>
             </div>
-          </div>
-          {/* desktob nav end */}
-          {/* mobile nav start */}
+          </motion.div>
+
+          {/* Mobile nav */}
           <div
             ref={navbarRef}
             className={cn(
-              "fixed top-0 flex flex-col justify-start items-start left-0 h-[70vh] w-[60vw] bg-background gap-[30px] z-50 transition-transform duration-500 ease-in-out lg:hidden  supports-[backdrop-filter]:bg-background/90 lg:bg-background backdrop-blur px-5 py-10 rounded-b-2xl overflow-hidden overflow-y-auto text-foreground",
-              isToggleOpen ? "translate-x-0" : "-translate-x-full"
+              "fixed top-0 right-0 flex flex-col items-end justify-start h-full w-[60vw] bg-background z-50 transition-transform duration-500 ease-in-out lg:hidden supports-[backdrop-filter]:bg-background/90 backdrop-blur px-5 py-10 rounded-b-2xl overflow-y-auto",
+              isToggleOpen ? "translate-x-0" : "translate-x-full"
             )}
           >
-            <Link
-              href={"/"}
+            {/* Close Button */}
+            <button
+              onClick={() => setIsToggleOpen(false)}
+              className="self-start hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-md text-foreground"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Brand */}
+            {/* <Link
+              href="/"
               className="font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
             >
               Commerce_
-            </Link>
-            <div className="flex flex-col justify-center items-start gap-[30px] w-full">
-              {navLinks.map((item, index) => (
+            </Link> */}
+            <div className="flex flex-col justify-center items-start gap-6 mb-12 w-full text-end">
+              {navLinks.map((item, idx) => (
                 <Link
+                  key={idx}
                   onClick={() => setIsToggleOpen(false)}
                   href={item.link}
-                  key={index}
                   className={cn(
-                    "text-foreground hover:text-accent transition-all duration-300 ease-in-out w-full",
+                    "text-foreground hover:text-accent transition-all duration-300 ease-in-out w-full text-[16px]",
                     pathname === item.link
                       ? "text-accent font-bold"
                       : "text-foreground"
@@ -145,56 +136,59 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className="z-50 flex items-center gap-2.5">
+            <div className="z-50 flex justify-end items-end gap-2.5 w-full">
               <span className="hover:text-accent">
                 <Search />
               </span>
               <span className="relative hover:text-accent">
                 <ShoppingBasket />
-
-                <span className="top-[-10px] right-[-10px] absolute flex justify-center items-center bg-primary dark:bg-[#a19b9b] rounded-full size-[14px] font-bold text-[10px] text-foreground">
+                <span className="top-[-10px] right-[-10px] absolute flex justify-center items-center bg-primary dark:bg-[#a19b9b] rounded-full w-[14px] h-[14px] font-bold text-[10px] text-foreground">
                   0
                 </span>
               </span>
             </div>
           </div>
-          {/* movie nav end  */}
-        </div>
-        {/*      <!-- Mobile trigger start--> */}
-        <div className="top-0 right-16 z-50 fixed my-6 w-[40px]">
-          <button
-            className={`relative   order-10 block h-10  self-start justify-between lg:hidden w-full    
-                ${
-                  isToggleOpen
-                    ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0   "
-                    : ""
-                }
-              `}
-            onClick={() => setIsToggleOpen(!isToggleOpen)}
-            aria-expanded={isToggleOpen ? "true" : "false"}
-            aria-label="Toggle navigation"
-          >
-            <div className="top-1/2 right-0 absolute w-6 -translate-y-1/2 transform">
-              <span
-                aria-hidden="true"
-                className="block absolute bg-slate-900 dark:bg-white rounded-full w-9/12 h-0.5 transition-all -translate-y-2 duration-300 w transform"
-              ></span>
-              <span
-                aria-hidden="true"
-                className="block absolute bg-slate-900 dark:bg-white rounded-full w-6 h-0.5 transition duration-300 transform"
-              ></span>
-              <span
-                aria-hidden="true"
-                className="block absolute bg-slate-900 dark:bg-white rounded-full w-1/2 h-0.5 origin-top-left transition-all translate-y-2 duration-300 transform"
-              ></span>
-            </div>
-          </button>
+          {/* Mobile nav end */}
         </div>
 
-        {/* mobile trigger end */}
+        {/* Mobile trigger */}
+        <div className="lg:hidden top-4 right-0 left-0 z-40 fixed px-5">
+          <div className="flex justify-between items-center p-2 rounded-xl">
+            {/* Left: Logo */}
+            <Link
+              href="/"
+              className="pl-3 font-medium text-[22px] text-foreground hover:text-accent tracking-tighter"
+            >
+              Commerce_
+            </Link>
+
+            {/* Right: Hamburger */}
+            <div className="flex justify-center items-center gap-2">
+              <button
+                onClick={() => setIsToggleOpen(!isToggleOpen)}
+                aria-label="Toggle navigation"
+                className={cn(
+                  "relative h-10 w-10 flex flex-col justify-center items-center",
+                  isToggleOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+                )}
+              >
+                <span className="block bg-slate-900 dark:bg-white w-9/12 h-0.5 transition-transform duration-300 4" />
+                <span className="block bg-slate-900 dark:bg-white my-1 w-5 h-0.5 transition-transform duration-300" />
+                <span className="block bg-slate-900 dark:bg-white w-6 h-0.5 transition-transform duration-300" />
+              </button>
+
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
       </nav>
-      <div className="top-0 right-2 z-50 fixed flex justify-end items-center md:mx-2 lg:mx-6 my-6 mt-14 h-[61px] -translate-y-1/2">
-        <ThemeToggle />
+
+      {/* Theme toggle */}
+
+      <div className="hidden top-0 left-1/2 z-40 fixed lg:flex justify-end items-center my-9 -translate-x-1/2 container">
+        <div className="z-50 lg:pr-6 xl:pr-2">
+          <ThemeToggle />
+        </div>
       </div>
     </>
   );
